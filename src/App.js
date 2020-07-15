@@ -1,7 +1,7 @@
 import React from 'react';
 import Board from './components/Board'
 
-function App()
+const App = () =>
 {
   return (
     <div className="container-fluid">

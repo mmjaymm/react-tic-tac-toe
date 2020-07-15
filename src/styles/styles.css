@@ -1,0 +1,14 @@
+.gameboard {
+    width: 300px;
+}
+
+.btn {
+    height: 100%;
+    font-size: 30px !important;
+}
+
+td {
+    width: 50px;
+    height: 80px;
+    padding: 0!important;
+}
