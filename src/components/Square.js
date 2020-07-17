@@ -4,7 +4,7 @@ import '../styles/styles.css'
 const Square = (props) =>
 {
     return (
-        <button type="button" className="btn btn-block btn-secondary" onClick={props.clickFillButton}>
+        <button type="button" className="btn btn-block btn-secondary btn-square" onClick={props.clickFillButton} disabled={props.disabled}>
             {props.value}
         </button>
     )

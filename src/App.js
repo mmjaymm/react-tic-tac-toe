@@ -1,11 +1,17 @@
 import React from 'react';
-import Board from './components/Board'
+import { Switch, Route } from 'react-router-dom';
+import Board from './components/Board';
+import Calculator from './components/calculator/Calculator';
 
 const App = () =>
 {
   return (
     <div className="container-fluid">
-      <Board />
+      {/* <Switch>
+        <Route path="/calculator"> */}
+      <Calculator />
+      {/* </Route>
+      </Switch> */}
     </div>
   );
 }

@@ -18,7 +18,8 @@ class Board extends Component
             [3, 4, 5],
             [6, 7, 8]
         ];
-
+        const humanPlayer = 'O';
+        const aiPlayer = 'X';
         this.state = {
             squares: myboard,
             player: 'X',
@@ -35,22 +36,30 @@ class Board extends Component
         return (
             <Square
                 value={this.state.squares[indx]}
-                clickFillButton={() => this.changeMyBoard(indx)}
+                clickFillButton={() => this.turn(indx, player)}
                 disabled={this.state.disabled}
             />
         )
     }
 
-    changeMyBoard(indx)
+    turnClick(indx)
+    {
+
+    }
+
+    turn(indx, player)
     {
         const squares = this.state.squares.slice();
 
-        if (this.algoWinner(squares) || squares[indx])
-        {
-            return;
-        }
+        // if (this.algoWinner(squares) || squares[indx])
+        // {
+        //     return;
+        // }
 
-        squares[indx] = this.state.player;
+        squares[indx] = player;
+
+
+
         let nextPlayer = this.state.player === 'X' ? 'O' : 'X';
 
         this.setState({
@@ -100,24 +109,22 @@ class Board extends Component
 
     render()
     {
-        let statusResult = this.algoWinner(this.state.squares);
-        let status;
-        if (statusResult)
-        {
-            // this.disabledBoardSquare();
-
-            alert(`Player ${statusResult} is winner!`);
-            status = `Player ${statusResult} is winner!`;
-        }
-        else
-        {
-            status = `Next Player is ${this.state.player}`;
-        }
+        // let statusResult = this.algoWinner(this.state.squares);
+        // let status;
+        // if (statusResult)
+        // {
+        //     alert(`Player ${statusResult} is winner!`);
+        //     status = `Player ${statusResult} is winner!`;
+        // }
+        // else
+        // {
+        //     status = `Next Player is ${this.state.player}`;
+        // }
 
         return (
             <div className="row gameboard">
                 <div className="col-12">
-                    <h3 className="text-center">{status}</h3>
+                    <h3 className="text-center">Your next move player O</h3>
                 </div>
                 <div className="col-12">
                     <table className="table table-bordered">
